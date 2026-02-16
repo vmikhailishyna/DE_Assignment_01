@@ -63,5 +63,7 @@ GROUP BY nt.user_id, th.hashtag_text;
 
 
 
+## Additional Task
+<img width="1348" height="692" alt="image" src="https://github.com/user-attachments/assets/751b315e-7466-4f0c-b0c9-8e133c3aa297" />
 
 
