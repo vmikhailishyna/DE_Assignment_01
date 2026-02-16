@@ -4,19 +4,17 @@ SELECT * FROM read_json_auto('NintendoTweets.json', union_by_name=true);
 SELECT * FROM raw_NintendoTweets;
 
 CREATE OR REPLACE TABLE NintendoTweets AS
-       SELECT created_at,
+       SELECT strftime(strptime(created_at, '%a %b %d %H:%M:%S +0000 %Y'), '%a %b %d %H') as created_at,
               id,
               user.id as user_id,
               text,
               in_reply_to_status_id,
               in_reply_to_user_id,
               is_quote_status,
-              quote_count,
-              reply_count,
-              retweet_count,
-              favorite_count,
               lang
        FROM raw_NintendoTweets;
+
+SELECT * FROM NintendoTweets;
 
 DESCRIBE NintendoTweets;
 
